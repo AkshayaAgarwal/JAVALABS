@@ -1,0 +1,109 @@
+           +---------------------+             +-----------------------+
+           |        Admin        |             |         Customer      |
+           +---------------------+             +-----------------------+
+           | admin_id: int       |             | user_id: int          |
+           | admin_name: String  |             | user_title: String    |
+           | admin_password: Str |             | user_name: String     |
+           | admin_email: String |             | user_password: String |
+           | admin_phone: int    |             | user_email: String    |
+           | admin_education: St |             | user_phone: int       |
+           | admin_age: int      |             | user_alt_phone: int   |
+           | admin_height: int   |             | user_city: String     |
+           | admin_experience: S |             | user_pincode: String  |
+           | admin_maritial_stat |             | user_state: String    |
+           +---------------------+             +-----------------------+
+                      |                                    |
+                      |                                    |
+                      |                                    |
+                      |                                    |
+                      |                                    |
+        +-------------------+          +---------------------+
+|    Product        |          |      Category       |
++-------------------+          +---------------------+
+| - id : int        |          | - id : int          |
+| - name : String   |          | - name : String     |
+| - sku : String    |          | - description : String|
+| - retailPrice : double |     | - imageUrl : String |
+| - costPrice : double   |     | - sku : String      |
+| - weight : double |         | - maxPrice : double |
+| - brand : String  |         | - minPrice : double |
+| - category : Category |     | - brands : String   |
+| - variants : List<String> |  | - variants : List<String> |
+| - customAttributes : List<String> | | - ratings : int |
+| - seoFields : Map<String, String> |  | - marketingClaims : List<String> |
+| - seller : Seller |        +---------------------+
++-------------------+
+         ^
+         |
+         |
++-------------------+
+|    Seller         |
++-------------------+
+| - id : int        |
+| - name : String   |
+| - ratings : int   |
+| - sales : int     |
+| - address : String|
+| - experience : double |
+| - successRate : double |
+| - growth : double |
+| - categories : List<Category> |
+| - products : List<Product> |
++-------------------+
+         ^
+         |
+         |
++-------------------+
+|    Order          |
++-------------------+
+| - id : int        |
+| - number : int    |
+| - amount : double |
+| - status : String |
+| - category : String |
+| - seller : Seller |
+| - invoiceNo : int |
+| - customer : Customer |
+| - delivery : Delivery |
++-------------------+
+         ^
+         |
+         |
++-------------------+
+|    Delivery       |
++-------------------+
+| - orderNumber : int |
+| - customerName : String |
+| - customerPincode : int |
+| - customerAddress : String |
+| - amount : double |
+| - shipmentId : int |
+| - eWayBillNo : int |
+| - status : String |
+| - deliveredTo : String |
+| - comments : String |
++-------------------+
+         ^
+         |
+         |
++-------------------+
+|    Customer       |
++-------------------+
+| - id : int        |
+| - name : String   |
+| - email : String  |
+| - number : int    |
+| - orders : List<Order> |
+| - transactions : List<Transaction> |
+| - address : String |
+| - ratings : int   |
+| - orderSuccessRate : double |
++-------------------+
+         ^
+         |
+         |
++-------------------+
+|    Transaction    |
++-------------------+
+| - id : int        |
+| -
